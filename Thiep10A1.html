@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Thiệp 20/10 - Gửi 10A1 💐</title>
+  <style>
+    body {
+      background: linear-gradient(135deg, #ffb6c1, #ff69b4);
+      font-family: 'Poppins', sans-serif;
+      color: white;
+      text-align: center;
+      overflow: hidden;
+      height: 100vh;
+      margin: 0;
+    }
+
+    h1 {
+      font-size: 2.5em;
+      margin-top: 100px;
+      animation: fadeIn 2s ease;
+    }
+
+    #letter {
+      display: none;
+      font-size: 1.3em;
+      max-width: 700px;
+      margin: 40px auto;
+      line-height: 1.6;
+      animation: fadeInUp 1.5s ease;
+    }
+
+    .btn {
+      display: inline-block;
+      margin-top: 40px;
+      padding: 14px 36px;
+      font-size: 1.2em;
+      background-color: #fff;
+      color: #ff69b4;
+      border: none;
+      border-radius: 30px;
+      cursor: pointer;
+      font-weight: bold;
+      transition: 0.3s;
+      animation: fadeInUp 2s ease;
+    }
+
+    .btn:hover {
+      transform: scale(1.1);
+      background-color: #ffe4f0;
+    }
+
+    /* Hiệu ứng hoa rơi */
+    .flower {
+      position: absolute;
+      top: -10px;
+      animation: fall 6s linear infinite;
+      opacity: 0.8;
+      font-size: 20px;
+    }
+
+    @keyframes fall {
+      0% {
+        transform: translateY(0) rotate(0deg);
+        opacity: 1;
+      }
+      100% {
+        transform: translateY(100vh) rotate(360deg);
+        opacity: 0;
+      }
+    }
+
+    @keyframes fadeIn {
+      from {opacity: 0;}
+      to {opacity: 1;}
+    }
+
+    @keyframes fadeInUp {
+      from {opacity: 0; transform: translateY(30px);}
+      to {opacity: 1; transform: translateY(0);}
+    }
+  </style>
+</head>
+<body>
+  <h1>💌 Thiệp chúc mừng 20/10 - Gửi đến các bạn nữ 10A1 💖</h1>
+
+  <button class="btn" onclick="readLetter()">💝 Nhấn để đọc thư 💝</button>
+
+  <div id="letter">
+    <p>
+      Gửi đến các bạn nữ lớp 10A1 thân mến 💐<br><br>
+      Nhân ngày Phụ Nữ Việt Nam 20/10, chúc các bạn luôn xinh đẹp, học giỏi và thật hạnh phúc!  
+      Cảm ơn vì đã làm cho lớp chúng ta thêm rực rỡ và đáng yêu hơn mỗi ngày 🌸  
+      <br><br>
+      Chúc cho nụ cười luôn nở trên môi và những điều tốt đẹp nhất sẽ đến với các bạn 💞  
+      <br><br>
+      — Thân gửi từ Duy Anh 10A1 💫
+    </p>
+  </div>
+
+  <script>
+    // Hiệu ứng hoa rơi
+    const flowers = ['🌸', '🌺', '🌹', '💮', '🌷', '🌼'];
+    function createFlower() {
+      const flower = document.createElement('div');
+      flower.classList.add('flower');
+      flower.textContent = flowers[Math.floor(Math.random() * flowers.length)];
+      flower.style.left = Math.random() * window.innerWidth + 'px';
+      flower.style.fontSize = 20 + Math.random() * 20 + 'px';
+      flower.style.animationDuration = 4 + Math.random() * 3 + 's';
+      document.body.appendChild(flower);
+      setTimeout(() => flower.remove(), 7000);
+    }
+    setInterval(createFlower, 300);
+
+    // Hiển thị thư
+    function readLetter() {
+      document.getElementById("letter").style.display = "block";
+      document.querySelector(".btn").style.display = "none";
+    }
+  </script>
+</body>
+</html>
